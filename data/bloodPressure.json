@@ -1,0 +1,123 @@
+{
+  "@graph" : [ {
+    "@graph" : [
+      {
+        "@id" : "InterIoTMsg:meta308c3987-b69e-4672-890b-3f3d6229596d",
+        "@type" : [ "InterIoTMsg:meta", "InterIoTMsg:Thing_Update" ],
+        "InterIoTMsg:conversationID" : "conv85e0f5d2-cf65-4d23-84b1-ff1381ae01fc",
+        "InterIoTMsg:dateTimeStamp" : "2017-05-08T13:48:19.428+02:00",
+        "InterIoTMsg:messageID" : "msg204d0405-a6da-4054-a6db-96d20c413746"
+      }
+    ],
+    "@id" : "InterIoTMsg:metadata"
+  }, {
+    "@graph": [
+      {
+        "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#sys",
+        "@type": "ns2:Measurement",
+        "ns2:value": {
+          "@type": "xsd:float",
+          "@value": "22.2"
+        }
+      },
+      {
+        "@id": "_:ub322bL27C57",
+        "@type": "owl:Restriction",
+        "owl:allValuesFrom": {
+          "@id": "http://ontology.universAAL.org/PersonalHealthDevice.owl#BloodPressureSensor"
+        },
+        "owl:onProperty": {
+          "@id": "rdf:subject"
+        }
+      },
+      {
+        "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#bp",
+        "@type": [
+          "ns3:BloodPressure",
+          "ns3:HealthMeasurement"
+        ],
+        "ns3:diastolicBloodPreassure": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#dias"
+        },
+        "ns3:systolicBloodPreassure": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#sys"
+        }
+      },
+      {
+        "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#dias",
+        "@type": "ns2:Measurement",
+        "ns2:value": {
+          "@type": "xsd:float",
+          "@value": "11.1"
+        }
+      },
+      {
+        "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#bps",
+        "@type": [
+          "http://ontology.universAAL.org/PersonalHealthDevice.owl#BloodPressureSensor",
+          "ns:Device",
+          "ns:PhysicalThing"
+        ],
+        "ns4:hasValue": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#bp"
+        }
+      },
+      {
+        "@id": "urn:org.universAAL.middleware.context.rdf:ContextEvent#_:9e2aa729ac420ba3:171d",
+        "@type": "ns1:ContextEvent",
+        "ns1:hasProvider": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#pub"
+        },
+        "ns1:hasTimestamp": {
+          "@type": "xsd:long",
+          "@value": "1418143637251"
+        },
+        "rdf:object": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#bp"
+        },
+        "rdf:predicate": {
+          "@id": "ns4:hasValue"
+        },
+        "rdf:subject": {
+          "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#bps"
+        }
+      },
+      {
+        "@id": "ns1:gauge",
+        "@type": "ns1:ContextProviderType"
+      },
+      {
+        "@id": "http://ontology.universAAL.org/SimpleHealthclient.owl#pub",
+        "@type": "ns1:ContextProvider",
+        "ns1:hasType": {
+          "@id": "ns1:gauge"
+        },
+        "ns1:myClassesOfEvents": {
+          "@id": "_:ub322bL25C25"
+        }
+      },
+      {
+        "@id": "_:ub322bL25C25",
+        "@type": "ns1:ContextEventPattern",
+        "rdfs:subClassOf": {
+          "@id": "_:ub322bL27C57"
+        }
+      }
+    ],
+    "@id" : "InterIoTMsg:payload"
+  } ],
+  "@context" : {
+    "InterIoTMsg" : "http://inter-iot.eu/message/",
+    "InterIoT" : "http://inter-iot.eu/",
+    "InterIoTInst" : "http://inter-iot.eu/inst/",
+    "ns": "http://ontology.universaal.org/PhThing.owl#",
+    "ns1": "http://ontology.universAAL.org/Context.owl#",
+    "ns2": "http://ontology.universaal.org/Measurement.owl#",
+    "ns3": "http://ontology.universaal.org/HealthMeasurement.owl#",
+    "ns4": "http://ontology.universAAL.org/Device.owl#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}

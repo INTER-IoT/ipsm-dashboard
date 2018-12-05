@@ -1,0 +1,120 @@
+{
+  "@graph": [
+    {
+      "@graph": [
+        {
+          "@id": "InterIoTMsg:meta308c3987-b69e-4672-890b-3f3d6229596d",
+          "@type": [
+            "InterIoTMsg:meta"
+          ],
+          "InterIoTMsg:conversationID": "conv85e0f5d2-cf65-4d23-84b1-ff1381ae01fb",
+          "InterIoTMsg:dateTimeStamp": "2018-07-03T10:18:19.428+01:00",
+          "InterIoTMsg:messageID": "msg204d0405-a6da-4054-a6db-96d20c413747"
+        }
+      ],
+      "@id": "InterIoTMsg:metadata"
+    },
+    {
+      "@graph": [
+        {
+          "@id": "_:b0",
+          "http://hl7.org/fhir-rdf/code": {
+            "@id": "http://snomed.info/sct/Blood_Pressure"
+          }
+        },
+        {
+          "@id": "_:b1",
+          "http://hl7.org/fhir-rdf/target": {
+            "@id": "_:b3"
+          },
+          "http://hl7.org/fhir-rdf/type": "has-component"
+        },
+        {
+          "@id": "_:b2",
+          "http://hl7.org/fhir-rdf/target": {
+            "@id": "_:b4"
+          },
+          "http://hl7.org/fhir-rdf/type": "has-component"
+        },
+        {
+          "@id": "_:b3",
+          "@type": "http://hl7.org/fhir-rdf/Observation",
+          "http://hl7.org/fhir-rdf/coding": {
+            "@id": "_:b5"
+          },
+          "http://hl7.org/fhir-rdf/valueQuantity": {
+            "@id": "_:b6"
+          }
+        },
+        {
+          "@id": "_:b4",
+          "@type": "http://hl7.org/fhir-rdf/Observation",
+          "http://hl7.org/fhir-rdf/coding": {
+            "@id": "_:b7"
+          },
+          "http://hl7.org/fhir-rdf/valueQuantity": {
+            "@id": "_:b8"
+          }
+        },
+        {
+          "@id": "_:b5",
+          "http://hl7.org/fhir-rdf/code": {
+            "@id": "http://snomed.info/sct/Systolic_Blood_Pressure"
+          }
+        },
+        {
+          "@id": "_:b6",
+          "@type": "http://hl7.org/fhir-rdf/Quantity",
+          "http://hl7.org/fhir-rdf/units": "mmHg",
+          "http://hl7.org/fhir-rdf/value": {
+            "@type": "http://www.w3.org/2001/XMLSchema#float",
+            "@value": "110"
+          }
+        },
+        {
+          "@id": "_:b7",
+          "http://hl7.org/fhir-rdf/code": {
+            "@id": "http://snomed.info/sct/Diastolic_Blood_Pressure"
+          }
+        },
+        {
+          "@id": "_:b8",
+          "@type": "http://hl7.org/fhir-rdf/Quantity",
+          "http://hl7.org/fhir-rdf/units": "mmHg",
+          "http://hl7.org/fhir-rdf/value": {
+            "@type": "http://www.w3.org/2001/XMLSchema#float",
+            "@value": "70"
+          }
+        },
+        {
+          "@id": "tag:BPfhir123",
+          "@type": "http://hl7.org/fhir-rdf/Observation",
+          "http://hl7.org/fhir-rdf/coding": {
+            "@id": "_:b0"
+          },
+          "http://hl7.org/fhir-rdf/related": [
+            {
+              "@id": "_:b1"
+            },
+            {
+              "@id": "_:b2"
+            }
+          ]
+        }
+      ],
+      "@id": "InterIoTMsg:payload"
+    }
+  ],
+  "@context": {
+    "InterIoTMsg": "http://inter-iot.eu/message/",
+    "InterIoT": "http://inter-iot.eu/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "sripas": "http://www.inter-iot.eu/sripas#",
+    "fhir": "http://hl7.org/fhir-rdf/",
+    "sct": "http://snomed.info/sct/",
+    "damMed": "http://dam.example/med#"
+  }
+}

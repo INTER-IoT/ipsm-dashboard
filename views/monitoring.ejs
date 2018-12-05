@@ -1,0 +1,151 @@
+<!--
+Copyright 2016-2018 Universitat Politècnica de València
+  Copyright 2016-2018 Università della Calabria
+  Copyright 2016-2018 Prodevelop, SL
+  Copyright 2016-2018 Technische Universiteit Eindhoven
+  Copyright 2016-2018 Fundación de la Comunidad Valenciana para la Investigación, Promoción y Estudios Comerciales de Valenciaport
+  Copyright 2016-2018 Rinicom Ltd
+  Copyright 2016-2018 Association pour le développement de la formation professionnelle dans le transport
+  Copyright 2016-2018 Noatum Ports Valenciana, S.A.U.
+  Copyright 2016-2018 XLAB razvoj programske opreme in svetovanje d.o.o.
+  Copyright 2016-2018 Systems Research Institute Polish Academy of Sciences
+  Copyright 2016-2018 Azienda Sanitaria Locale TO5
+  Copyright 2016-2018 Alessandro Bassi Consulting SARL
+  Copyright 2016-2018 Neways Technologies B.V.
+
+  See the NOTICE file distributed with this work for additional information
+  regarding copyright ownership.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<%######################################################################### -%>
+<%- include(locals.partials + 'header.ejs', {styles: []}) -%>
+<%######################################################################### -%>
+<%######################################################################### -%>
+<%- include(locals.partials + 'navigation.ejs', {
+    active: "monitoring"
+}) -%>
+<%######################################################################### -%>
+
+        <div id="page-wrapper">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 id="page_header" class="page-header">Monitoring</h1>
+                </div>
+            </div>
+            <div class="tab-content" style="padding-top: 30px;">
+                <div class="row">
+                    <div class="col-lg-10 col-lg-offset-1">
+                        <div class="panel panel-info">
+                            <div class="panel-heading" data-toogle="tooltip" title="Channel selection for monitoring">
+                                Available channels
+                            </div>
+                            <div class="panel-body">
+                                <%_ channels.sort((a,b) => {
+                                        if (a.source < b.source) {
+                                            return -1;
+                                        } else {
+                                            if (a.source > b.source){
+                                                return 1;
+                                            } else {
+                                                if (a.sink < b.sink) {
+                                                    return -1;
+                                                } else {
+                                                    if (a.sink > b.sink) {
+                                                        return 1;
+                                                    } else {
+                                                        return 0;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }).forEach((chan) => { -%>
+                                <div class="[ form-group ]">
+                                    <input type="checkbox"
+                                        class="selChan"
+                                        data-uuid="<%= chan.uuid -%>"
+                                        data-sink="<%= chan.sink -%>"
+                                        name="<%= chan.uuid -%>"
+                                        id="<%= chan.uuid -%>"
+                                        autocomplete="off"/>
+                                    <div class="[ btn-group ]"
+                                        data-toggle="tooltip"
+                                        title="Click to enable/disable channel output monitoring"
+                                        data-placement="right">
+                                        <label for="<%= chan.uuid -%>" class="[ btn btn-primary ]">
+                                            <span class="[ glyphicon glyphicon-ok ]"></span>
+                                            <span class="selChan"> </span>
+                                        </label>
+                                        <label for="<%= chan.uuid -%>" class="[ btn btn-default active ]">
+                                            &#x227A;<b><%= chan.id -%></b>&#x227B;&nbsp;:
+                                            [<b><%= chan.source -%></b>]
+                                            &#x21A3;
+                                            [<b class="red"><%= chan.sink -%></b>]
+                                        </label>
+                                    </div>
+                                    <div class="msgBuf" id="<%= chan.uuid -%>-buff"></div>
+                                </div>
+                                <%_ }); -%>
+
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <div class="" id="controls">
+                                    <button class="btn btn-primary disabled" type="button" id="pause"
+                                        data-toggle="tooltip"
+                                        title="Stop collecting received messages"
+                                        data-placement="right"
+                                    >
+                                        <i class="glyphicon glyphicon-pause"></i>
+                                    </button>
+                                    <button class="btn btn-primary disabled" type="button" id="play"
+                                        data-toggle="tooltip"
+                                        title="Start collecting received messages again"
+                                        data-placement="right"
+                                    >
+                                        <i class="glyphicon glyphicon-play"></i>
+                                    </button>
+                                    <button class="btn btn-primary disabled" type="button" id="refresh"
+                                        data-toggle="tooltip"
+                                        title="Clear history of received messages"
+                                        data-placement="right"
+                                    >
+                                        <i class="glyphicon glyphicon-refresh"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-info">
+                            <div class="panel-heading">
+                                Message contents preview
+                            </div>
+                            <div class="panel-body text-center">
+                                <textarea id="content" style="width: 100%;"></textarea>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<%######################################################################### -%>
+<%- include(locals.partials + 'footer.ejs', {
+    scripts: [
+        "/socket.io/socket.io.js",
+        "vendor/randomColor.min.js",
+        "monitoring.js",
+        "ipsm.js"
+    ]
+}) -%>
+<%######################################################################### -%>

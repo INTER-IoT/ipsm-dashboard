@@ -1,0 +1,94 @@
+{
+  "@graph" : [ {
+    "@graph" : [ {
+      "@id" : "InterIoTMsg:meta308c3987-b69e-4672-890b-3f3d6229596d",
+      "@type" : [ "InterIoTMsg:Thing_Update", "InterIoTMsg:meta" ],
+      "InterIoTMsg:conversationID" : "conv85e0f5d2-cf65-4d23-84b1-ff1381ae01fc",
+      "InterIoTMsg:dateTimeStamp" : "2017-05-08T13:48:19.428+02:00",
+      "InterIoTMsg:messageID" : "msg204d0405-a6da-4054-a6db-96d20c413746"
+    } ],
+    "@id" : "InterIoTMsg:metadata"
+  }, {
+    "@graph" : [ {
+      "@id" : "_:b0",
+      "@type" : "owl:Restriction",
+      "owl:allValuesFrom" : {
+        "@id" : "http://ontology.universAAL.org/PersonalHealthDevice.owl#HeartRateSensor"
+      },
+      "owl:onProperty" : {
+        "@id" : "rdf:subject"
+      }
+    }, {
+      "@id" : "_:b1",
+      "@type" : "http://www.w3.org/2006/time#TimePosition",
+      "http://www.w3.org/2006/time#numericPosition" : {
+        "@type" : "xsd:decimal",
+        "@value" : "1418143893015"
+      }
+    }, {
+      "@id" : "_:b2",
+      "@type" : "http://ontology.universAAL.org/Context.owl#ContextEventPattern",
+      "rdfs:subClassOf" : {
+        "@id" : "_:b0"
+      }
+    }, {
+      "@id" : "_:b3",
+      "@type" : "http://www.w3.org/2006/time#Instant",
+      "http://www.w3.org/2006/time#inTimePosition" : {
+        "@id" : "_:b1"
+      }
+    }, {
+      "@id" : "http://ontology.universAAL.org/Context.owl#gauge",
+      "@type" : "http://ontology.universAAL.org/Context.owl#ContextProviderType"
+    }, {
+      "@id" : "ns1:hr",
+      "@type" : [ "ns3:HeartRate", "http://www.w3.org/ns/sosa/Result" ],
+      "InterIoT:GOIoTP#hasValue" : {
+        "@type" : "xsd:int",
+        "@value" : "33"
+      }
+    }, {
+      "@id" : "ns1:hrs",
+      "@type" : [ "http://www.w3.org/ns/sosa/Sensor", "http://purl.oclc.org/NET/ssnx/ssn#Device", "http://ontology.universAAL.org/PersonalHealthDevice.owl#HeartRateSensor" ],
+      "http://www.w3.org/ns/sosa/isHostedBy" : {
+        "@id" : "ns1:pub2"
+      }
+    }, {
+      "@id" : "ns1:pub2",
+      "@type" : [ "http://www.w3.org/ns/sosa/Platform", "InterIoT:medex#Gauge" ],
+      "http://ontology.universAAL.org/Context.owl#hasType" : {
+        "@id" : "http://ontology.universAAL.org/Context.owl#gauge"
+      },
+      "http://ontology.universAAL.org/Context.owl#myClassesOfEvents" : {
+        "@id" : "_:b2"
+      }
+    }, {
+      "@id" : "urn:org.universAAL.middleware.context.rdf:ContextEvent#_:9e2aa729ac420ba3:182a",
+      "@type" : "http://www.w3.org/ns/sosa/Observation",
+      "http://www.w3.org/ns/sosa/hasResult" : {
+        "@id" : "ns1:hr"
+      },
+      "http://www.w3.org/ns/sosa/madeBySensor" : {
+        "@id" : "ns1:hrs"
+      },
+      "http://www.w3.org/ns/sosa/phenomenonTime" : {
+        "@id" : "_:b3"
+      }
+    } ],
+    "@id" : "InterIoTMsg:payload"
+  } ],
+  "@context" : {
+    "ns" : "http://ontology.universaal.org/PhThing.owl#",
+    "owl" : "http://www.w3.org/2002/07/owl#",
+    "InterIoTMsg" : "http://inter-iot.eu/message/",
+    "InterIoTInst" : "http://inter-iot.eu/inst/",
+    "rdf" : "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "xsd" : "http://www.w3.org/2001/XMLSchema#",
+    "rdfs" : "http://www.w3.org/2000/01/rdf-schema#",
+    "InterIoT" : "http://inter-iot.eu/",
+    "ns2" : "http://ontology.universaal.org/Measurement.owl#",
+    "ns1" : "http://ontology.universAAL.org/SimpleHealthclient.owl#",
+    "ns4" : "http://ontology.universAAL.org/Device.owl#",
+    "ns3" : "http://ontology.universaal.org/HealthMeasurement.owl#"
+  }
+}

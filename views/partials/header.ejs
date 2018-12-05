@@ -1,0 +1,75 @@
+<!--
+Copyright 2016-2018 Universitat Politècnica de València
+  Copyright 2016-2018 Università della Calabria
+  Copyright 2016-2018 Prodevelop, SL
+  Copyright 2016-2018 Technische Universiteit Eindhoven
+  Copyright 2016-2018 Fundación de la Comunidad Valenciana para la Investigación, Promoción y Estudios Comerciales de Valenciaport
+  Copyright 2016-2018 Rinicom Ltd
+  Copyright 2016-2018 Association pour le développement de la formation professionnelle dans le transport
+  Copyright 2016-2018 Noatum Ports Valenciana, S.A.U.
+  Copyright 2016-2018 XLAB razvoj programske opreme in svetovanje d.o.o.
+  Copyright 2016-2018 Systems Research Institute Polish Academy of Sciences
+  Copyright 2016-2018 Azienda Sanitaria Locale TO5
+  Copyright 2016-2018 Alessandro Bassi Consulting SARL
+  Copyright 2016-2018 Neways Technologies B.V.
+
+  See the NOTICE file distributed with this work for additional information
+  regarding copyright ownership.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="">
+        <meta name="author" content="">
+
+        <title>IPSM Dashboard</title>
+
+        <!-- Bootstrap Core CSS -->
+        <link href="/stylesheets/vendor/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Custom CSS -->
+        <link href="/stylesheets/ipsm_demo.css" rel="stylesheet">
+        <%_ styles.forEach( (style) => { -%>
+        <link href="/stylesheets/<%= style -%>" rel="stylesheet">
+        <%_ }); -%>
+
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+            <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+            <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+        <![endif]-->
+
+    </head>
+
+    <body>
+        <script>
+            var CONFIG = CONFIG || (function(){
+                var _args = {}; // private
+                return {
+                    init : function (Args) {
+                        _args = Args;
+                    },
+                    get : function (key) {
+                        return _args[key];
+                    }
+                };
+            }());
+        </script>

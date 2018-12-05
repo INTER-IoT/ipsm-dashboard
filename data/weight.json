@@ -1,0 +1,107 @@
+{
+  "@graph" : [ {
+    "@graph" : [
+      {
+        "@id" : "InterIoTMsg:meta308c3987-b69e-4672-890b-3f3d6229596d",
+        "@type" : [ "InterIoTMsg:meta", "InterIoTMsg:Thing_Update" ],
+        "InterIoTMsg:conversationID" : "conv85e0f5d2-cf65-4d23-84b1-ff1381ae01fc",
+        "InterIoTMsg:dateTimeStamp" : "2017-05-08T13:48:19.428+02:00",
+        "InterIoTMsg:messageID" : "msg204d0405-a6da-4054-a6db-96d20c413746"
+      }
+    ],
+    "@id" : "InterIoTMsg:metadata"
+  }, {
+    "@graph": [
+      {
+        "@id": "http://ontology.universAAL.org/Context.owl#gauge",
+        "@type": "http://ontology.universAAL.org/Context.owl#ContextProviderType"
+      },
+      {
+        "@id": "ns1:pub2",
+        "@type": "http://ontology.universAAL.org/Context.owl#ContextProvider",
+        "http://ontology.universAAL.org/Context.owl#hasType": {
+          "@id": "http://ontology.universAAL.org/Context.owl#gauge"
+        },
+        "http://ontology.universAAL.org/Context.owl#myClassesOfEvents": {
+          "@id": "_:ub181bL24C22"
+        }
+      },
+      {
+        "@id": "_:ub181bL26C57",
+        "@type": "owl:Restriction",
+        "owl:allValuesFrom": {
+          "@id": "ns5:WeighingScale"
+        },
+        "owl:onProperty": {
+          "@id": "rdf:subject"
+        }
+      },
+      {
+        "@id": "ns1:weight1",
+        "@type": [
+          "ns2:Measurement",
+          "ns3:PersonWeight",
+          "ns3:HealthMeasurement"
+        ],
+        "ns2:value": {
+          "@type": "xsd:float",
+          "@value": "0.0"
+        }
+      },
+      {
+        "@id": "urn:org.universAAL.middleware.context.rdf:ContextEvent#_:9e2aa729ac420ba3:182a",
+        "@type": "http://ontology.universAAL.org/Context.owl#ContextEvent",
+        "http://ontology.universAAL.org/Context.owl#hasProvider": {
+          "@id": "ns1:pub2"
+        },
+        "http://ontology.universAAL.org/Context.owl#hasTimestamp": {
+          "@type": "xsd:long",
+          "@value": "1418143893015"
+        },
+        "rdf:object": {
+          "@id": "ns1:weight1"
+        },
+        "rdf:predicate": {
+          "@id": "ns4:hasValue"
+        },
+        "rdf:subject": {
+          "@id": "ns1:scale1"
+        }
+      },
+      {
+        "@id": "ns1:scale1",
+        "@type": [
+          "ns:PhysicalThing",
+          "ns5:WeighingScale",
+          "ns:Device"
+        ],
+        "ns4:hasValue": {
+          "@id": "ns1:weight1"
+        }
+      },
+      {
+        "@id": "_:ub181bL24C22",
+        "@type": "http://ontology.universAAL.org/Context.owl#ContextEventPattern",
+        "rdfs:subClassOf": {
+          "@id": "_:ub181bL26C57"
+        }
+      }
+    ],
+    "@id" : "InterIoTMsg:payload"
+  } ],
+  "@context" : {
+    "InterIoTMsg" : "http://inter-iot.eu/message/",
+    "InterIoT" : "http://inter-iot.eu/",
+    "InterIoTInst" : "http://inter-iot.eu/inst/",
+    "ns": "http://ontology.universaal.org/PhThing.owl#",
+    "ns1": "http://ontology.universAAL.org/InterIoT.owl#",
+    "ns2": "http://ontology.universaal.org/Measurement.owl#",
+    "ns3": "http://ontology.universaal.org/HealthMeasurement.owl#",
+    "ns4": "http://ontology.universAAL.org/Device.owl#",
+    "ns5": "http://ontology.universAAL.org/PersonalHealthDevice.owl#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  }
+}

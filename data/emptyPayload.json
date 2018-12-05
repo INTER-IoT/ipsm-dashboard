@@ -1,0 +1,17 @@
+{
+  "@graph" : [ {
+    "@id" : "InterIoTMsg:meta32f3a749-05cd-40b8-9eec-a2e52138d3dd",
+    "@type" : [ "InterIoTMsg:meta", "InterIoTMsg:Subscribe", "InterIoTMsg:Response" ],
+    "InterIoTMsg:ReceiverPlatformId" : {
+      "@id" : "InterIoT:inst/platform/PLATFORM_WITH_SCALE"
+    },
+    "InterIoTMsg:conversationID" : "conv79927eeb-8f1e-4f45-8aa9-dcaf1ca92bee",
+    "InterIoTMsg:dateTimeStamp" : "2017-09-26T22:05:38.611+02:00",
+    "InterIoTMsg:messageID" : "msg0ba1c847-7f30-422a-9469-7d89283b61cd"
+  } ],
+  "@id" : "InterIoTMsg:metadata",
+  "@context" : {
+    "InterIoTMsg" : "http://inter-iot.eu/message/",
+    "InterIoT" : "http://inter-iot.eu/"
+  }
+}

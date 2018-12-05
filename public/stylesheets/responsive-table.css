@@ -1,0 +1,92 @@
+/*
+  Copyright 2016-2018 Universitat Politècnica de València
+  Copyright 2016-2018 Università della Calabria
+  Copyright 2016-2018 Prodevelop, SL
+  Copyright 2016-2018 Technische Universiteit Eindhoven
+  Copyright 2016-2018 Fundación de la Comunidad Valenciana para la Investigación, Promoción y Estudios Comerciales de Valenciaport
+  Copyright 2016-2018 Rinicom Ltd
+  Copyright 2016-2018 Association pour le développement de la formation professionnelle dans le transport
+  Copyright 2016-2018 Noatum Ports Valenciana, S.A.U.
+  Copyright 2016-2018 XLAB razvoj programske opreme in svetovanje d.o.o.
+  Copyright 2016-2018 Systems Research Institute Polish Academy of Sciences
+  Copyright 2016-2018 Azienda Sanitaria Locale TO5
+  Copyright 2016-2018 Alessandro Bassi Consulting SARL
+  Copyright 2016-2018 Neways Technologies B.V.
+
+  See the NOTICE file distributed with this work for additional information
+  regarding copyright ownership.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+*/
+#responsive-table td {
+    padding-left: 0.5em;
+}
+
+@media only screen and (max-width: 800px) {
+
+    /* Force table to not be like tables anymore */
+    #responsive-table table,
+    #responsive-table thead,
+    #responsive-table tbody,
+    #responsive-table th,
+    #responsive-table td,
+    #responsive-table tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    #responsive-table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #responsive-table tfoot tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    #responsive-table tr {
+        border: 1px solid #ccc;
+    }
+
+    #responsive-table td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    #responsive-table td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+    / / top: 6 px;
+        left: 16px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Label the data */
+    #responsive-table td:before {
+        content: attr(data-title);
+    }
+
+}
