@@ -23,7 +23,7 @@
     "node-rest-client": "^3.1.0",
     "pretty-data": "^0.40.0",
     "serve-favicon": "^2.5.0",
-    "socket.io": "^2.1.1",
+    "socket.io": "^2.4.0",
     "uuid": "^3.3.2",
     "winston": "^2.4.*"
   }
